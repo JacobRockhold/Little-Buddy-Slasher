@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.9.1.2\lib\net461\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,20 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encounters.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="Scenes\IntroductionScene.cs" />
-    <Compile Include="PlayerInventoryManagement.cs" />
-    <Compile Include="Scenes\NewPlayerScene.cs" />
+    <Compile Include="PlayerModel.cs" />
+    <Compile Include="Player\PlayerInventory.cs" />
+    <Compile Include="Scenes.cs" />
     <Compile Include="Player\Player.cs" />
-    <Compile Include="UiService\PlayerNameInput.cs" />
+    <Compile Include="PlayerNameValidator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenes\GameScenes.cs" />
     <Compile Include="UiService\StandardMessages.cs" />
     <Compile Include="UiService\UiService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,24 +6,9 @@ using System.Threading.Tasks;
 
 namespace Little_Buddy_Slasher
 {
-    enum PlayerState
+    class Game
     {
-        Creation,
-        PlayingScene,
-        EndingScene,
-        InMenu,
-        Battle
-    };
-    public class Game
-    {
-        readonly Player player = new Player();
-        public void Start()
-        {
-            player.CreatePlayer();
-            GameScenes scenes = new GameScenes();
-            scenes.SceneSelection("NewPlayerScene");
-            player.UpdateName();
-            scenes.SceneSelection("IntroductionScene");
-        }
+        public static PlayerModel playerModel = new PlayerModel();
+        public static Player player = new Player(playerModel);
     }
 }
