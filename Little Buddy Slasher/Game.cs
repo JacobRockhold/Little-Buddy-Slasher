@@ -1,14 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Little_Buddy_Slasher
+﻿namespace Little_Buddy_Slasher
 {
     class Game
     {
-        public static PlayerModel playerModel = new PlayerModel();
-        public static Player player = new Player(playerModel);
+        private static PlayerModel playerModel = new PlayerModel();
+        private static Scenes scene = new Scenes();
+        public Game()
+        {
+            Scene = scene;
+            PlayerModel = playerModel;
+            PlayerModel.CreatePlayer();
+        }
+        private PlayerModel PlayerModel { get; set; }
+        private Scenes Scene { get; set; }
+
+        public PlayerModel ReturnPlayerModel()
+        {
+            return PlayerModel;
+        }
+
+        public Scenes ReturnScene()
+        {
+            return Scene;
+        }
     }
 }

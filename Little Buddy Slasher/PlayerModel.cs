@@ -1,6 +1,5 @@
-﻿using System;
-using FluentValidation;
-using FluentValidation.Results;
+﻿using FluentValidation.Results;
+using System;
 
 namespace Little_Buddy_Slasher
 {
@@ -11,6 +10,14 @@ namespace Little_Buddy_Slasher
         public int Defence { get; set; }
         public int Health { get; set; }
         public PlayerInventory Inventory { get; set; }
+
+        public void CreatePlayer()
+        {
+            Strength = 2;
+            Defence = 2;
+            Health = 10;
+            Inventory = new PlayerInventory();
+        }
 
         public string ReturnPlayerName()
         {
@@ -37,6 +44,7 @@ namespace Little_Buddy_Slasher
             {
                 return;
             }
+            Console.WriteLine(results);
             PlayerName = null;
         }
     }

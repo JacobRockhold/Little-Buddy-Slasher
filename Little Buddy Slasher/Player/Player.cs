@@ -1,24 +1,18 @@
-﻿using FluentValidation;
-using FluentValidation.Results;
-using System;
-
-namespace Little_Buddy_Slasher
+﻿namespace Little_Buddy_Slasher
 {
-    public class Player
+    class Player
     {
-        public Player(PlayerModel playerModel)
+        class Warrior : Player
         {
-            PlayerModelObject = playerModel;
+
         }
-
-        private PlayerModel PlayerModelObject { get; set; }
-
-        public void CreatePlayer()
+        class Mage : Player
         {
-            PlayerModelObject.Strength = 2;
-            PlayerModelObject.Defence = 2;
-            PlayerModelObject.Health = 10;
-            PlayerModelObject.Inventory = new PlayerInventory();
+
+        }
+        class Archer : Player
+        {
+
         }
     }
 }

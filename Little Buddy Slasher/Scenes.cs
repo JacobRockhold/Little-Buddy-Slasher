@@ -1,22 +1,15 @@
 ﻿using System;
-using System.Threading;
 
 namespace Little_Buddy_Slasher
 {
     class Scenes : Game
     {
-        public Scenes(string name)
+        public Scenes()
         {
-            Name = name;
+            PlayerModelObject = ReturnPlayerModel();
         }
-        public Scenes(string name, PlayerModel playerModel)
-        {
-            Name = name;
-            PlayerModelObject = playerModel;
-        }
-        public string Name { get; set; }
-        public PlayerModel PlayerModelObject { get; set; }
-        
+        private PlayerModel PlayerModelObject { get; set; }
+
         public void StartNewPlayer()
         {
             //0 - short pause, 1 - medium pause 2 - long pause
@@ -33,10 +26,10 @@ namespace Little_Buddy_Slasher
 
         public void LevelOneSceneOne()
         {
-            Console.WriteLine($"Nice to meet you {Name}, too bad we had to meet under " +
+            Console.WriteLine($"Nice to meet you {PlayerModelObject.PlayerName}, too bad we had to meet under " +
                 "these circumstances.");
             Console.ReadLine();
         }
     }
-    
+
 }
